@@ -122,10 +122,9 @@ class EventWidget extends AsyncView<Props, State> {
             widgetErrors: undefined,
           };
         }
-
-        set(newState, field, value);
       }
 
+      set(newState, field, value);
       return {...newState, widgetErrors: undefined};
     });
   };
@@ -172,7 +171,7 @@ class EventWidget extends AsyncView<Props, State> {
       await validateWidget(this.api, organization.slug, widgetData);
 
       if (isEditing) {
-        (onUpdate as (nextWidget: Widget) => void)({
+        onUpdate({
           id: (widget as Widget).id,
           ...widgetData,
         });

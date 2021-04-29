@@ -117,10 +117,9 @@ class MetricWidget extends AsyncView<Props, State> {
             widgetErrors: undefined,
           };
         }
-
-        set(newState, field, value);
       }
 
+      set(newState, field, value);
       return {...newState, widgetErrors: undefined};
     });
   };
